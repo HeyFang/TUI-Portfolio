@@ -343,3 +343,108 @@ header {
         font-size: 10px; /* Shrink art on mobile */
     }
 }
+/* =========================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================= */
+
+/* --- TABLETS & SMALL LAPTOPS (Max Width: 950px) --- */
+@media (max-width: 950px) {
+    /* Stack Header: Art Top, Info Bottom */
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    /* Adjust Profile Section alignment */
+    .profile-section {
+        margin: 0;
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Center the profile grid items */
+    .profile-grid {
+        justify-content: center;
+        /* Keep grid structure but center the whole block */
+        margin: 0 auto; 
+    }
+
+    .tui-window {
+        height: auto;
+        min-height: 60vh;
+    }
+}
+
+/* --- MOBILE DEVICES (Max Width: 600px) --- */
+@media (max-width: 600px) {
+    body {
+        padding: 10px; /* Reduce outer padding */
+    }
+
+    /* 1. ASCII ART SCALING */
+    /* Shrink font so art fits on 350px screens */
+    .ascii-art {
+        font-size: 7px; 
+        line-height: 8px;
+        overflow-x: hidden; /* Prevent horizontal scroll bar */
+    }
+
+    /* 2. PROFILE GRID ADJUSTMENT */
+    /* Remove the 'Arrow' column to save space */
+    .profile-grid {
+        grid-template-columns: 20px auto 1fr; /* Remove arrow col */
+        gap: 10px;
+        width: 100%;
+        font-size: 0.9rem;
+    }
+    
+    /* Hide the arrows in the HTML via CSS */
+    .profile-grid .arrow {
+        display: none;
+    }
+
+    /* 3. TABS (STACKING) */
+    .tab-bar {
+        flex-wrap: wrap; /* Allow tabs to drop to next line */
+    }
+    .tab-btn {
+        flex: 1 1 50%; /* 2 buttons per row */
+        text-align: center;
+        padding: 10px 5px;
+        font-size: 0.9rem;
+    }
+
+    /* 4. CONTENT & RESUME */
+    .content-pane {
+        padding: 15px; /* Reduce padding inside window */
+    }
+
+    /* Hide Resume Iframe on mobile (User should download instead) */
+    .resume-preview iframe {
+        display: none;
+    }
+    .resume-preview::after {
+        content: "[ Preview hidden on mobile. Please download PDF ]";
+        display: block;
+        text-align: center;
+        color: var(--dim);
+        padding: 20px;
+        border: 1px dashed var(--dim);
+    }
+
+    /* 5. ABOUT SECTION */
+    .about-container {
+        flex-direction: column-reverse; /* Text bottom, Image top */
+        gap: 20px;
+    }
+    
+    .about-img img {
+        width: 100%; /* Full width image */
+        max-width: 250px;
+    }
+}
