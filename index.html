@@ -1,86 +1,218 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>Fang</title>
-	<style>body{
-	margin: 0;
-	padding: 0;
-}
-
-.shape{
-	position: absolute;
-	top: 30%;
-	left: 50%;
-	transform: translate(-50%,-50%)translateY(40px) rotate(25deg);
-	width: 320px;
-	height: 160px;
-	background: #ff395d;
-	border-left: 20px solid #92e256;
-	border-right: 20px solid #92e256;
-	border-bottom: 20px solid #92e256;
-	border-bottom-left-radius: 200px;
-	border-bottom-right-radius: 200px;
-	
-}
-
-.shape:before{
-	content: '';
-	position: absolute;
-	top: 0;
-	left: -20px;
-	width: calc(50% + 20px);
-	height: calc(100% + 20px);
-	background: rgba(255, 255, 255, .3);
-}
-
-span{
-	display: block;
-	width: 10px;
-	height: 10px;
-	background: #262626;
-	border-radius: 50%;
-	display: inline-block;
-	margin: 20px;
-	position: relative;
-	left: 8.6%;
-}
-
-span:nth-child(6),
-span:nth-child(12),
-span:nth-child(13)
-{
-	background: transparent;
-}
-
-.txt{
-	color: #ff395d;
-	text-align: center;
-	margin-top: 30%;
-	font-size: 3rem;
-}
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aryan Shete</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-	<div class="txt">a watermelon</div>
-	<div class="shape">
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-	</div>
 
+    <div class="terminal-container">
+    <header>
+    <pre class="ascii-art">
+    ▄▄     ▄▄▄▄▄▄   ▄▄▄    ▄▄▄    ▄▄     ▄▄▄   ▄▄ 
+   ████    ██▀▀▀▀██  ██▄  ▄██    ████    ███   ██ 
+   ████    ██    ██   ██▄▄██     ████    ██▀█  ██ 
+  ██  ██   ███████     ▀██▀     ██  ██   ██ ██ ██ 
+  ██████   ██  ▀██▄     ██      ██████   ██  █▄██ 
+ ▄██  ██▄  ██    ██     ██     ▄██  ██▄  ██   ███ 
+ ▀▀    ▀▀  ▀▀    ▀▀▀    ▀▀     ▀▀    ▀▀  ▀▀   ▀▀▀ 
+
+    </pre>
+    
+    <div class="profile-section">
+        
+        <div class="profile-name">
+            <i class="fa-solid fa-address-card"></i>
+            <span>Aryan Ajay Shete</span>
+        </div>
+
+        <div class="profile-divider">---------------------------------</div>
+
+        <div class="profile-grid">
+            
+            <i class="fa-brands fa-github"></i>
+            <span>GitHub</span>
+            <span class="arrow">→</span>
+            <a href="https://github.com/HeyFang" target="_blank">github/HeyFang</a>
+
+            <i class="fa-solid fa-envelope"></i>
+            <span>Email</span>
+            <span class="arrow">→</span>
+            <a href="mailto:heyfang@proton.me">heyfang@proton.me</a>
+
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Status</span>
+            <span class="arrow">→</span>
+            <span class="status-value">Open to work</span>
+            
+        </div>
+    </div>
+</header> 
+        
+              <main class="tui-window">
+            
+            <div class="tab-bar">
+                <button class="tab-btn active" onclick="openTab('projects')">[ 1. PROJECTS ]</button>
+                <button class="tab-btn" onclick="openTab('skills')">[ 2. SKILLS ]</button>
+                <button class="tab-btn" onclick="openTab('resume')">[ 3. RESUME ]</button>
+                <button class="tab-btn" onclick="openTab('about')">[ 4. ABOUT ME ]</button>
+                <div class="tab-filler"></div> 
+            </div>
+
+            <div class="content-pane">
+                
+                <div id="projects" class="tab-content active-content">
+                    <h3>// Notable Projects</h3>
+                    <ul class="tree-view">
+                        <li>
+                            <strong><a href="https://github.com/HeyFang/genesis-tool" target="_blank" rel="noopener noreferrer" class="folder">genesis-tool</a></strong>
+                            <em>(Bash)</em>
+                            <ul>
+                                <li>A menu-driven Bash script to automate the initialization, security hardening, monitoring, and Docker deployment on fresh Ubuntu servers.</li>
+                            </ul>
+                        </li>
+                        <br>
+                        <li>
+                            <strong><a href="https://github.com/HeyFang/parkEz" target="_blank" rel="noopener noreferrer" class="folder">parkEz</a></strong>
+                            <em>(PHP, JS, CSS)</em>
+                            <ul>
+                                <li>A web-based parking space booking system that allows users to find available parking spots, make reservations online, and manage bookings seamlessly.</li>
+                            </ul>
+                        </li>
+                        <br>
+                        <li>
+                            <strong><a href="https://github.com/HeyFang/Cyklon" target="_blank" rel="noopener noreferrer" class="folder">Cyklon</a></strong>
+                            <em>(JavaScript)</em>
+                            <ul>
+                                <li>A Discord bot that provides real-time Minecraft server stats, interactive task management, player matchmaking, and server whitelisting.</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h3>// Currently Working on:</h3>
+                    <ul class="tree-view">
+                        <li>
+                            <strong><a href="https://github.com/HeyFang/bombsquad_server_utils/tree/feng" target="_blank" rel="noopener noreferrer" class="folder">Ballistica Game Engine – Custom Fork</a></strong>
+                            <em>(C++, Python)</em>
+                            <ul>
+                                <li>Modified ballistica engine to add server-focused features such as convenient commands, admin MFA auth, and IP bans. Improving server safety and moderation.</li>
+                            </ul>
+                        </li>
+                        <br>
+                        <li>
+                            <strong><a href="https://github.com/HeyFang/lazynft" target="_blank" rel="noopener noreferrer" class="folder">lazynft</a></strong>
+                            <em>(Go, BubbleTea, nftables)</em>
+                            <ul>
+                                <li>A terminal UI tool for managing nftables firewalls on VPS. Lets you safely view, open, and close ports without risking SSH lockouts.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="skills" class="tab-content">
+                    <h3>// Skills:</h3>
+                    <ul class="tree-view">
+                        <li>
+                            <strong>Primary Languages:</strong>
+                            <ul>
+                                <li>C++</li>
+                                <li>C</li>
+                                <li>Python</li>
+                                <li>JavaScript</li>
+                                <li>HTML / CSS</li>
+                                <li>PHP</li>
+                            </ul>
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Systems & OS:</strong>
+                            <ul>
+                                <li>Linux (Ubuntu for servers, Arch for daily use)</li>
+                                <li>Linux firewalls (ufw, iptables, nftables)</li>
+                                <li>Bash scripting</li>
+                                <li>Low-level programming concepts</li>
+                            </ul>
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Tools & Platforms:</strong>
+                            <ul>
+                                <li>Git & GitHub</li>
+                                <li>VPS hosting and server management
+                                    <ul>
+                                        <li>AWS</li>
+                                        <li>GCP</li>
+                                    </ul>
+                                </li>
+                                <li>Game server hosting and modding</li>
+                                <li>lazygit</li>
+                                <li>Vim / Neovim</li>
+                            </ul>
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Other:</strong>
+                            <ul>
+                                <li>Competitive programming (Codeforces)</li>
+                                <li>Discord bot development</li>
+                                <li>Ballistica game engine</li>
+                                <li>Arduino</li>
+                                <li>Blender</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="resume" class="tab-content">
+                    <h3 id="res-head">
+                        <a href="assets/myCv.pdf" download="Aryan_Shete_Resume.pdf" target="_blank" class="btn">📃 Download Resume (PDF)</a>
+                    </h3>
+                    <div class="resume-preview">
+                        <iframe src="assets/myCv.pdf" title="Aryan Shete Resume" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <div id="about" class="tab-content">
+    <h3>// Hey, hello there!</h3>
+    
+    <div class="about-container">
+        
+        
+
+        <div class="about-text">
+            <p>
+                I'm <span>Aryan Shete.</span>
+                I first got into programming through game modding, which gradually grew into an interest in how systems work at a low level.
+            </p>
+            <p>
+                I enjoy working across both hardware and software, with a particular interest in 
+                <span>low-level programming and Linux-based environments</span>.
+            </p>
+            <p>
+                Currently, I spend most of my time learning and experimenting with new technologies, hosting and
+                modding game servers on VPS, and exploring network security concepts such as <span>Linux firewalls and traffic filtering</span>. 
+                I also practice <span>competitive programming</span> and build Discord bots for fun.
+            </p>
+            <p>
+                I’m generally curious and like learning by trying things out. Right now, I’m
+                very interested in <span>Embedded Systems, Edge AI, TinyML,
+                and AI/ML in general</span>, and I prefer keeping my interests flexible rather than sticking to a single domain.
+            </p>
+            <em>PS: <span>I use Arch btw :)</span></em>
+        </div>
+        <div class="about-img">
+            <img src="assets/me.png" alt="Aryan Shete"> 
+        </div>
+    </div>
+</div>
+            </div>
+            
+        </main>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

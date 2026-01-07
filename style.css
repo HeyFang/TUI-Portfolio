@@ -1,0 +1,345 @@
+:root {
+    /* "Nord" Inspired Aesthetic Palette (Matte & Muted) */
+    --bg-color: #242933;   /* Nord Polar Night (Dark Grey-Blue) */
+    --bg-translucent: rgba(36, 41, 51, 0.97); 
+    --fg-color: #d8dee9;   /* Nord Snow Storm (Off-White) */
+    --accent: #88c0d0;     /* Nord Frost (Muted Cyan/Blue) */
+    --dim: #748296;        /* Nord Polar Night Light (Grey for comments) */
+    --border: #4c566a;     /* Subtle border */
+    
+    /* Hard Shadow */
+    --shadow-color: #151920; 
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--fg-color);
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+/* BACKGROUND IMAGE (Very subtle texture) */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--bg-color);
+    background-blend-mode: overlay; /* Darkens the image */
+    opacity: 0.9; 
+    z-index: -1; 
+}
+
+.terminal-container {
+    width: 100%;
+    max-width: 1100px; /* Slightly wider to fit header side-by-side */
+    background-color: transparent; 
+    border: 1px solid var(--dim); 
+    padding: 20px; /* Increased padding */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 15px 15px 0px var(--shadow-color);
+}
+
+/* --- HEADER LAYOUT (Side by Side) --- */
+header {
+    display: flex;
+    justify-content: space-between; /* Pushes Art left, Info right */
+    align-items: flex-end; /* Aligns bottom of text */
+    flex-wrap: wrap; /* Wraps on mobile */
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--dim);
+}
+
+.ascii-art {
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 12px; /* Adjusted to ensure fit */
+    margin: 0;
+    line-height: 1.1;
+    white-space: pre; /* Ensures art stays formatted */
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    align-items: flex-end;  /* Align text to the right */
+    gap: 5px;
+    color: var(--dim);
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.contact-info span {
+    transition: color 0.2s;
+}
+.contact-info span:hover {
+    color: var(--accent);
+    cursor: default;
+}
+
+/* TUI Window Styling */
+.tui-window {
+    border: 1px solid var(--dim);
+    display: flex;
+    flex-direction: column;
+    height: 65vh; 
+}
+
+/* Tab Bar */
+.tab-bar {
+    display: flex;
+    border-bottom: 1px solid var(--dim);
+    background-color: transparent; 
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    border-right: 1px solid var(--dim);
+    color: var(--dim);
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 12px 20px;
+    cursor: pointer;
+}
+
+.tab-btn:hover {
+    color: var(--fg-color);
+    background-color: var(--dim);
+}
+
+.tab-btn.active {
+    background-color: var(--accent);
+    color: #242933; /* Dark text on light accent */
+    font-weight: bold;
+}
+
+.tab-filler {
+    flex-grow: 1;
+}
+
+/* Content Pane */
+.content-pane {
+    padding: 30px;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+/* Scrollbar */
+.content-pane::-webkit-scrollbar { width: 10px; }
+.content-pane::-webkit-scrollbar-track { background: var(--bg-color); }
+.content-pane::-webkit-scrollbar-thumb { background: var(--dim); }
+
+.tab-content { display: none; }
+.active-content { display: block; }
+
+.folder {
+  color: var(--accent);
+  text-decoration: underline;
+  font-weight: bold;
+  border-bottom: 1px dashed transparent;
+  transition: border 0.2s;
+}
+
+.folder:hover{
+  background-color: var(--accent);
+  color: #242933; /* Dark text on light accent */
+  text-decoration: none;
+}
+
+/* --- ABOUT ME SECTION (Text Left, Image Right) --- */
+.about-container {
+    display: flex;
+    flex-direction: row; /* Default row */
+    align-items: flex-start; /* Align top */
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.about-text {
+    flex: 2; /* Text takes 2 parts space */
+    line-height: 1.7;
+    color: #eceff4;
+}
+
+.about-img {
+    flex: 1; /* Image takes 1 part space */
+    display: flex;
+    justify-content: center;
+}
+
+.about-img img {
+    width: 280px; /* Enlarged */
+    height: auto;
+    border: 4px solid var(--dim);
+    
+    /* THEMED FILTER: Makes image monochromatic Cyan/Blue */
+    
+    transition: all 0.3s ease;
+}
+
+.about-img img:hover {
+    /* On hover, slightly reveal real colors but keep aesthetic */
+    border-color: var(--accent);
+}
+
+/* Responsive Stack */
+@media (max-width: 850px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+    .contact-info {
+        align-items: center; /* Center on mobile */
+        width: 100%;
+        margin-top: 10px;
+    }
+    .about-container {
+        flex-direction: column-reverse; /* Image on top on mobile, or bottom? Standard is Image Top */
+        align-items: center;
+    }
+    .about-img img {
+        width: 200px;
+        margin-bottom: 20px;
+    }
+}
+
+#about span, #skills strong { color: var(--accent); }
+
+/* RESUME BTN */
+#res-head .btn {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--bg-color);
+  background-color: var(--accent);
+  padding: 10px 20px;
+  font-weight: bold;
+}
+#res-head { text-align: center; }
+.resume-preview iframe { width: 100%; height: 50vh; border: 1px solid var(--dim); }
+
+/* --- HEADER LAYOUT --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align to top */
+    flex-wrap: wrap;
+    gap: 40px;
+    padding-bottom: 25px;
+    border-bottom: 2px solid var(--dim);
+}
+
+.ascii-art {
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 12px;
+    margin: 0;
+    line-height: 1.1;
+    white-space: pre;
+}
+
+/* --- PROFILE SECTION (Right Side) --- */
+.profile-section {
+    margin-left: auto;
+    margin-right: 15px;
+    max-width: 550px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* 1. Name Row */
+.profile-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--fg-color); /* Bright White/Grey */
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.profile-name i {
+    color: var(--accent);
+}
+
+/* 2. Dotted Divider */
+.profile-divider {
+    color: var(--dim);
+    font-weight: bold;
+    letter-spacing: 2px; /* Spreads the dashes out slightly */
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden; /* Prevents breaking if screen is too small */
+}
+
+/* 3. The Grid Layout for Links */
+.profile-grid {
+    display: grid;
+    /* Columns: Icon(auto) | Label(auto) | Arrow(auto) | Value(1fr) */
+    grid-template-columns: 20px auto 25px 1fr; 
+    row-gap: 8px; /* Space between rows */
+    align-items: center;
+}
+
+/* Grid Cell Styling */
+.profile-grid i {
+    color: var(--accent);
+    text-align: center; /* Center icon in its column */
+}
+
+.profile-grid span {
+    color: var(--fg-color);
+}
+
+.profile-grid .arrow {
+    color: var(--dim); /* Darker color for the arrow */
+    text-align: center;
+}
+
+.profile-grid a, .profile-grid .status-value {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.profile-grid a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Specific styling for 'Status' value */
+.status-value {
+    color: #a3be8c; /* Green color for status */
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    header {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+    }
+    .profile-section {
+        width: 100%;
+    }
+    .ascii-art {
+        font-size: 10px; /* Shrink art on mobile */
+    }
+}
