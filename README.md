@@ -1,2 +1,2 @@
 See it live: [View Portfolio](https://heyfang.github.io/)
-![Preview](assets/preview.png)
+![Preview](preview.png)
