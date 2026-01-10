@@ -1,2 +1,2 @@
-# HeyFang.github.io
-hosting test...
+See it live: [View Portfolio](https://heyfang.github.io/)
+
