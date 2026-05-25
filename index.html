@@ -55,114 +55,111 @@
               <main class="tui-window">
             
             <div class="tab-bar">
-                <button class="tab-btn active" onclick="openTab('projects')">[ 1. PROJECTS ]</button>
-                <button class="tab-btn" onclick="openTab('skills')">[ 2. SKILLS ]</button>
-                <button class="tab-btn" onclick="openTab('resume')">[ 3. RESUME ]</button>
-                <button class="tab-btn" onclick="openTab('about')">[ 4. ABOUT ME ]</button>
+                <button class="tab-btn active" onclick="openTab('projects')">[ PROJECTS ]</button>
+                <button class="tab-btn" onclick="openTab('skills')">[ STACK ]</button>
+                <button class="tab-btn" onclick="openTab('resume')">[ RESUME ]</button>
+                <button class="tab-btn" onclick="openTab('about')">[ WHOAMI ]</button>
                 <div class="tab-filler"></div> 
             </div>
 
             <div class="content-pane">
                 
                 <div id="projects" class="tab-content active-content">
-                    <h3>// Notable Projects</h3>
+                    <h3>// Projects</h3>
                     <ul class="tree-view">
                         <li>
-                            <strong><a href="https://github.com/HeyFang/genesis-tool" target="_blank" rel="noopener noreferrer" class="folder">genesis-tool</a></strong>
-                            <em>(Bash)</em>
+                            <strong>
+                                <a href="https://github.com/HeyFang/bombsquad_server_utils/tree/feng" target="_blank" rel="noopener noreferrer" class="folder">
+                                    Ballistica Engine — Custom Fork
+                                </a>
+                            </strong>
+
+                            <em>(C++, Python, AWS EC2, iptables)</em>
                             <ul>
-                                <li>A menu-driven Bash script to automate the initialization, security hardening, monitoring, and Docker deployment on fresh Ubuntu servers.</li>
+<li>Forked the open-source Ballistica C++ game engine and modified it at both the C++ layer and Python scripting layer — contributed patches back to the upstream repo and got them merged.</li>
+                                <li>Deployed and maintained on AWS EC2 for several years. Implemented network-level DOS mitigation using <code>iptables</code> rate-limiting and connection throttling to deal with spoofers and flood attacks.</li>
+                                <li>Built IP-based and token-based admin auth, player logging (IP, device UUID, session tokens), and a suite of chat commands for moderation tooling. Server files are used by multiple community hosters.</li>
+                                <li>Active community of ~900 members. Codebase kept clean, modular, and still updated.</li>
+
                             </ul>
                         </li>
                         <br>
                         <li>
-                            <strong><a href="https://github.com/HeyFang/parkEz" target="_blank" rel="noopener noreferrer" class="folder">parkEz</a></strong>
-                            <em>(PHP, JS, CSS)</em>
+                                            <strong>
+                                <a href="https://github.com/HeyFang/genesis-tool" target="_blank" rel="noopener noreferrer" class="folder">
+                                    genesis-tool
+                                </a>
+                            </strong>
+
+                            <em>(Bash, Docker, Ubuntu)</em>
                             <ul>
-                                <li>A web-based parking space booking system that allows users to find available parking spots, make reservations online, and manage bookings seamlessly.</li>
+                  <li>Menu-driven Bash script that bootstraps a fresh Ubuntu server from zero — SSH hardening, firewall rules, fail2ban, monitoring setup, and Docker deployment. Turns a multi-hour manual process into a few keystrokes.</li>
                             </ul>
                         </li>
                         <br>
-                        <li>
-                            <strong><a href="https://github.com/HeyFang/Cyklon" target="_blank" rel="noopener noreferrer" class="folder">Cyklon</a></strong>
-                            <em>(JavaScript)</em>
+                                               <li>
+                            <strong>
+                                <a href="https://github.com/HeyFang/net-reason" target="_blank" rel="noopener noreferrer" class="folder">
+                                    net-reason
+                                </a>
+                            </strong>
+                            <em>(Python, Linux, JSON)</em>
                             <ul>
-                                <li>A Discord bot that provides real-time Minecraft server stats, interactive task management, player matchmaking, and server whitelisting.</li>
-                            </ul>
-                        </li>
+                                <li>CLI diagnostic tool for triaging network and system errors on Linux. Run <code>netreason diagnosis</code>, answer a few Y/N prompts, and it walks a JSON-backed decision tree to narrow down the root cause and surface actionable fixes — instead of spending 30 minutes on Stack Overflow.</li>
+                  </ul>
+              <br>
+                        <li>
+                            <strong><a href="https://github.com/HeyFang/security-turret" target="_blank" rel="noopener noreferrer" class="folder">Search &amp; Scan Security Turret</a></strong>
+                            <em>(C, AVR, Embedded)</em>
+                            <ul>
+                                <li>Interrupt-driven embedded surveillance system on AVR. PIR sensor wakes the MCU from low-power idle; servo pans an ultrasonic sensor across 180°; locks onto targets within range. Full state-machine design — no <code>delay()</code> calls, everything driven by timer registers and bit manipulation.</li>
+
+             
                     </ul>
 
-                    <h3>// Currently Working on:</h3>
-                    <ul class="tree-view">
-                        <li>
-                            <strong><a href="https://github.com/HeyFang/bombsquad_server_utils/tree/feng" target="_blank" rel="noopener noreferrer" class="folder">Ballistica Game Engine – Custom Fork</a></strong>
-                            <em>(C++, Python)</em>
-                            <ul>
-                                <li>Modified ballistica engine to add server-focused features such as convenient commands, admin MFA auth, and IP bans. Improving server safety and moderation.</li>
-                            </ul>
-                        </li>
-                        <br>
-                        <li>
-                            <strong><a href="https://github.com/HeyFang/lazynft" target="_blank" rel="noopener noreferrer" class="folder">lazynft</a></strong>
-                            <em>(Go, BubbleTea, nftables)</em>
-                            <ul>
-                                <li>A terminal UI tool for managing nftables firewalls on VPS. Lets you safely view, open, and close ports without risking SSH lockouts.</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
+                                   </div>
 
+                               <!-- ===== STACK ===== -->
                 <div id="skills" class="tab-content">
-                    <h3>// Skills:</h3>
+                    <h3>// Stack</h3>
                     <ul class="tree-view">
+ 
                         <li>
-                            <strong>Primary Languages:</strong>
+                            <strong>Languages</strong>
                             <ul>
-                                <li>C++</li>
-                                <li>C</li>
+                                <li>C, C++</li>
                                 <li>Python</li>
-                                <li>JavaScript</li>
-                                <li>HTML / CSS</li>
-                                <li>PHP</li>
+                                <li>Bash</li>
                             </ul>
                         </li>
-                        <br>
+ <br>
                         <li>
-                            <strong>Systems & OS:</strong>
+                            <strong>Systems &amp; OS</strong>
                             <ul>
-                                <li>Linux (Ubuntu for servers, Arch for daily use)</li>
-                                <li>Linux firewalls (ufw, iptables, nftables)</li>
-                                <li>Bash scripting</li>
-                                <li>Low-level programming concepts</li>
+                                <li>Linux — Arch (daily driver), Ubuntu (servers)</li>
+                                <li>POSIX — syscalls, file descriptors, signals, process management</li>
+                                <li>Linux firewalls — iptables, nftables, ufw</li>
+                                <li>Socket programming, TCP/IP networking</li>
+                                <li>AWS EC2, VPS deployment and management</li>
                             </ul>
                         </li>
-                        <br>
+ <br>
                         <li>
-                            <strong>Tools & Platforms:</strong>
+                            <strong>Embedded</strong>
                             <ul>
-                                <li>Git & GitHub</li>
-                                <li>VPS hosting and server management
-                                    <ul>
-                                        <li>AWS</li>
-                                        <li>GCP</li>
-                                    </ul>
-                                </li>
-                                <li>Game server hosting and modding</li>
-                                <li>lazygit</li>
-                                <li>Vim / Neovim</li>
+                                <li>AVR microcontrollers — GPIO, timer registers, interrupts</li>
+                                <li>Bit manipulation, state-machine firmware design</li>
                             </ul>
                         </li>
-                        <br>
+ <br>
                         <li>
-                            <strong>Other:</strong>
+                            <strong>Tools</strong>
                             <ul>
-                                <li>Competitive programming (Codeforces)</li>
-                                <li>Discord bot development</li>
-                                <li>Ballistica game engine</li>
-                                <li>Arduino</li>
-                                <li>Blender</li>
+                                <li>Git, Neovim, GDB, Docker</li>
+                                <li>Codeforces — active, C++ (div. 3 → div. 2)</li>
                             </ul>
                         </li>
+ 
                     </ul>
                 </div>
 
@@ -175,36 +172,34 @@
                     </div>
                 </div>
 
-                <div id="about" class="tab-content">
-    <h3>// Hey, hello there!</h3>
-    
-    <div class="about-container">
-        
-        
+<!-- ===== WHOAMI ===== -->
+<!-- ===== WHOAMI ===== -->
+<div id="about" class="tab-content">
+    <h3>// whoami</h3>
 
+    <div class="about-container">
         <div class="about-text">
             <p>
-                I'm <span>Aryan Shete.</span>
-                I first got into programming through game modding, which gradually grew into an interest in how systems work at a low level.
-            </p>
-            <p>
-                I enjoy working across both hardware and software, with a particular interest in 
-                <span>low-level programming and Linux-based environments</span>.
-            </p>
-            <p>
-                Currently, I spend most of my time learning and experimenting with new technologies, hosting and
-                modding game servers on VPS, and exploring network security concepts such as <span>Linux firewalls and traffic filtering</span>. 
-                I also practice <span>competitive programming</span> and build Discord bots for fun.
-            </p>
-            <p>
-                I’m generally curious and like learning by trying things out. Right now, I’m
-                very interested in <span>Embedded Systems, Edge AI, TinyML,
-                and AI/ML in general</span>, and I prefer keeping my interests flexible rather than sticking to a single domain.
-            </p>
-            <em>PS: <span>I use Arch btw :)</span></em>
+Hey, I'm <span>Aryan.</span> I got into programming through game modding —
+                messing with Game servers, breaking things, fixing them, and slowly
+                drifting closer to how systems actually run underneath.
+           <p>
+    I like understanding <span>what’s happening below the abstractions</span>
+    <s>which most people take for granted.</s> —
+    memory, processes, networking, and general OS-level behavior.
+</p>
+           <p>
+    Most of my time goes into building small experiments — from writing C++ and solving
+    problems in competitive programming to hosting and modding game servers on VPS setups.
+    I also hang around developer communities, especially Discord servers, where I pick up
+    random ideas, break things, and learn how other people approach systems.
+</p>
+
+            <em>PS:<span> I use Arch btw :)</span></em>
         </div>
+
         <div class="about-img">
-            <img src="assets/me.png" alt="Aryan Shete"> 
+            <img src="assets/me.png" alt="Aryan Shete">
         </div>
     </div>
 </div>

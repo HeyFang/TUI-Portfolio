@@ -33,3 +33,4 @@ document.addEventListener('DOMContentLoaded', () => {
 function openTab(id) { 
     // Logic is handled by EventListeners above
 }
+
