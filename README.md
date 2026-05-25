@@ -1,6 +1,6 @@
  # Nordic-themed Terminal UI Portfolio
 
-![preview](ss.png)
+![preview](assets/ss.png)
 
 Live demo: https://heyfang.dev/
 
